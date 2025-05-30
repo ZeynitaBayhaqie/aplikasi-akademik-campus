@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('enrollments', function (Blueprint $table) {
-            $table->id();
+            $table->ulid('id')->primary();
+            $table->foreignUlid('student_id')->constrained('students')->cascadeOnDelete();
+            $table->foreignUlid('course_id')->constrained('courses')->cascadeOnDelete();
+            $table->string('grade');
+            $table->string('atttendance');
+            $table->string('status');
             $table->timestamps();
         });
     }
