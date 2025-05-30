@@ -1,0 +1,1279 @@
+{
+	"info": {
+		"_postman_id": "766870cb-bcde-488b-b8a0-dd40f639b258",
+		"name": "Aplikasi AkademikKampus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44311470",
+		"_collection_link": "https://zeynitabayhaqie.postman.co/workspace/62173355-44ee-4556-86b4-b298590c415e/collection/44311470-766870cb-bcde-488b-b8a0-dd40f639b258?action=share&source=collection_link&creator=44311470"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/student/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/user/01jwev8kdf1ejpcm0htjwwnv5z",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"01jwev8kdf1ejpcm0htjwwnv5z"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Jonscy",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Jonscy@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pasword123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "NsZPEzT7IqByB0LX5nEzISiO4x3LTc48coFGmYO5b0f6403a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Cahyo\",\r\n  \"email\": \"ahmed@mail.com\",\r\n  \"NIM\": \"2012456\",\r\n  \"password\": \"password567\",\r\n  \"major\": \"kepala sekolah\",\r\n  \"enrollment_year\": \"2025-10-12\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/student/01jwgq1d1rhaz5c61gtrbffrcn",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"01jwgq1d1rhaz5c61gtrbffrcn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/user/01jwevb7knd80jq9y32dxey9ge",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"01jwevb7knd80jq9y32dxey9ge"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "qj5FC3eOgT4sFITm8iqNNXAuFWoTHahN6958s314921c3bc2",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Get Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/book/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/book/01jwevn8rm4z54fmw1v1cm02kn",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"01jwevn8rm4z54fmw1v1cm02kn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Tetap Hidup",
+									"type": "text"
+								},
+								{
+									"key": "isbn",
+									"value": "3432124",
+									"type": "text"
+								},
+								{
+									"key": "publisher",
+									"value": "rumahbaca",
+									"type": "text"
+								},
+								{
+									"key": "year_published",
+									"value": "2025",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "90",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/book",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Kematian\",\r\n  \"isbn\": \"1232323\",\r\n  \"publisher\": \"Gamdias\",\r\n  \"year_publisher\": \"2017\",\r\n  \"stock\": \"12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/book/01jwevn8rm4z54fmw1v1cm02kn",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"01jwevn8rm4z54fmw1v1cm02kn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/book/01jwevn8rm4z54fmw1v1cm02kn",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book",
+								"01jwevn8rm4z54fmw1v1cm02kn"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "qj5FC3eOgT4sFITm8iqNNXAuFWoTHahN6958s314921c3bc2",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Enrollment",
+			"item": [
+				{
+					"name": "Get Enrollment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/author/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"author",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Enrollment by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/author/01jwevf52zmdv91kt6deknw420",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"author",
+								"01jwevf52zmdv91kt6deknw420"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Enrollment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Lamin",
+									"type": "text"
+								},
+								{
+									"key": "nationality",
+									"value": "Spanyol",
+									"type": "text"
+								},
+								{
+									"key": "birthdate",
+									"value": "20 mei 1980",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/author",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Enrollment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Arda Guler\",\r\n  \"nationality\": \"Turki\",\r\n  \"birthdate\": \"27 mei 1990\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/author/01jwevf52zmdv91kt6deknw420",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"author",
+								"01jwevf52zmdv91kt6deknw420"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Enrollment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/author/01jwevf52zmdv91kt6deknw420",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"author",
+								"01jwevf52zmdv91kt6deknw420"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "qj5FC3eOgT4sFITm8iqNNXAuFWoTHahN6958s314921c3bc2",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Lecturers",
+			"item": [
+				{
+					"name": "Get Lecturers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/loan/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"loan",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Lecturers by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/loan/01jwevytg2zr2x0bqezebfqxp5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"loan",
+								"01jwevytg2zr2x0bqezebfqxp5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Lecturers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "01jwevc6th8fp0gvt1fz37ktvq",
+									"type": "text"
+								},
+								{
+									"key": "book_id",
+									"value": "01jwevqg4r732xaynpada1ck4m",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/loan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"loan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Lecturers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": \"01jwev8kdf1ejpcm0htjwwnv5z\",\r\n  \"book_id\": \"01jwevpcn7pm6jmyerc0pqcm7z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/loan/01jwew2r9pwtkcsyv89a1d865z",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"loan",
+								"01jwew2r9pwtkcsyv89a1d865z"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Lecturers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/loan/01jwew2r9pwtkcsyv89a1d865z",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"loan",
+								"01jwew2r9pwtkcsyv89a1d865z"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "qj5FC3eOgT4sFITm8iqNNXAuFWoTHahN6958s314921c3bc2",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Course Lecturers",
+			"item": [
+				{
+					"name": "Get Course Lecturers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/book_author/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book_author",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course Lecturers by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/book_author/01jwewcp4davaermfsyyn42a26",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book_author",
+								"01jwewcp4davaermfsyyn42a26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Course Lecturers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "book_id",
+									"value": "01jwevpcn7pm6jmyerc0pqcm7z",
+									"type": "text"
+								},
+								{
+									"key": "author_id",
+									"value": "01jwevg499e9qknvbatpw3y0ep",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/book_author",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book_author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course Lecturers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"book_id\": \"01jwevqg4r732xaynpada1ck4m\",\r\n  \"author_id\": \"01jwevergrfrk4f63dhbqbmmve\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/book_author/01jwewcp4davaermfsyyn42a26",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book_author",
+								"01jwewcp4davaermfsyyn42a26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus Course Lecturers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/book_author/01jwewhctx64hs8ynzhn9y90pp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"book_author",
+								"01jwewhctx64hs8ynzhn9y90pp"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "qj5FC3eOgT4sFITm8iqNNXAuFWoTHahN6958s314921c3bc2",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>User ID</th>\r",
+							"        <th>Name</th>\r",
+							"        <th>Username</th>\r",
+							"        <th>Email</th>\r",
+							"        <th>Created At</th>\r",
+							"        <th>Updated At</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response.user.id}}</td>\r",
+							"        <td>{{response.user.name}}</td>\r",
+							"        <td>{{response.user.username}}</td>\r",
+							"        <td>{{response.user.email}}</td>\r",
+							"        <td>{{response.user.created_at}}</td>\r",
+							"        <td>{{response.user.updated_at}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@ifump.net",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@ifump.net",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "XojUca75qfljm4OHdrazzj6l13501x92aOZc8kHlbbb19b07",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}/api/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}

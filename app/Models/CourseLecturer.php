@@ -14,7 +14,7 @@ class CourseLecturer extends Model
     protected $fillable = [
         'course_id',
         'lecturer_id',
-        'role',
+        'role'
     ];
 
     protected function casts(): array

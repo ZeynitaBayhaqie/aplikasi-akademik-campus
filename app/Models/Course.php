@@ -19,7 +19,7 @@ class Course extends Model
         'name',
         'code',
         'credits',
-        'semester',
+        'semester'
     ];
 
     /**
@@ -32,6 +32,8 @@ class Course extends Model
         return [
             'credits' => 'string',
             'semester' => 'string',
+            'name' => 'string',
+            'code' => 'string',
         ];
     }
 

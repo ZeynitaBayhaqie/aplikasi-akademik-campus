@@ -15,8 +15,8 @@ class Enrollment extends Model
         'student_id',
         'course_id',
         'grade',
-        'atttendance',
-        'status',
+        'attendance',
+        'status'
     ];
 
     protected function casts(): array
@@ -24,6 +24,9 @@ class Enrollment extends Model
         return [
             'student_id' => 'string',
             'course_id' => 'string',
+            'grade' => 'string',
+            'attendance' => 'integer',
+            'status' => 'string',
         ];
     }
 

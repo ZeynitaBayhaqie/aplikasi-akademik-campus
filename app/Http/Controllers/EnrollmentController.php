@@ -4,72 +4,89 @@ namespace App\Http\Controllers;
 
 use App\Models\Enrollment;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class EnrollmentController extends Controller
 {
-    /**
-     * Display a listing of the enrollments.
-     */
-    public function index()
+    // Menampilkan semua enrollment
+    public function index(): JsonResponse
     {
-        return response()->json(Enrollment::with(['student', 'course'])->get());
+        $enrollments = Enrollment::with(['student', 'course'])->get();
+        return response()->json($enrollments, 200);
     }
 
-    /**
-     * Store a newly created enrollment in storage.
-     */
-    public function store(Request $request)
+    // Menampilkan enrollment berdasarkan ID
+    public function show($id): JsonResponse
     {
-        $validated = $request->validate([
+        try {
+            $enrollment = Enrollment::with(['student', 'course'])->findOrFail($id);
+            return response()->json($enrollment, 200);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Enrollment tidak ditemukan.'], 404);
+        }
+    }
+
+    // Menambahkan enrollment baru
+    public function store(Request $request): JsonResponse
+    {
+        $request->validate([
             'student_id' => 'required|exists:students,id',
             'course_id' => 'required|exists:courses,id',
             'grade' => 'required|string|max:10',
-            'atttendance' => 'required|string|max:10',
-            'status' => 'required|string|max:50',
+            'attendance' => 'required|string|max:255',
+            'status' => 'required|string|max:255',
         ]);
 
-        $enrollment = Enrollment::create($validated);
+        $enrollment = Enrollment::create($request->only([
+            'student_id', 'course_id', 'grade', 'attendance', 'status'
+        ]));
 
-        return response()->json($enrollment, 201);
+        return response()->json([
+            'message' => 'Enrollment berhasil ditambahkan.',
+            'data' => $enrollment
+        ], 201);
     }
 
-    /**
-     * Display the specified enrollment.
-     */
-    public function show(string $id)
+    // Mengupdate data enrollment
+    public function update(Request $request, $id): JsonResponse
     {
-        $enrollment = Enrollment::with(['student', 'course'])->findOrFail($id);
-        return response()->json($enrollment);
+        try {
+            $enrollment = Enrollment::findOrFail($id);
+
+            $request->validate([
+                'student_id' => 'sometimes|exists:students,id',
+                'course_id' => 'sometimes|exists:courses,id',
+                'grade' => 'sometimes|string|max:10',
+                'attendance' => 'sometimes|string|max:255',
+                'status' => 'sometimes|string|max:255',
+            ]);
+
+            $enrollment->update($request->only([
+                'student_id', 'course_id', 'grade', 'atttendance', 'status'
+            ]));
+
+            return response()->json([
+                'message' => $enrollment->wasChanged()
+                    ? 'Enrollment berhasil diupdate.'
+                    : 'Tidak ada perubahan pada data enrollment.',
+                'data' => $enrollment
+            ], 200);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Enrollment tidak ditemukan.'], 404);
+        }
     }
 
-    /**
-     * Update the specified enrollment in storage.
-     */
-    public function update(Request $request, string $id)
+    // Menghapus enrollment
+    public function destroy($id): JsonResponse
     {
-        $enrollment = Enrollment::findOrFail($id);
+        try {
+            $enrollment = Enrollment::findOrFail($id);
+            $enrollment->delete();
 
-        $validated = $request->validate([
-            'student_id' => 'sometimes|required|exists:students,id',
-            'course_id' => 'sometimes|required|exists:courses,id',
-            'grade' => 'sometimes|required|string|max:10',
-            'atttendance' => 'sometimes|required|string|max:10',
-            'status' => 'sometimes|required|string|max:50',
-        ]);
-
-        $enrollment->update($validated);
-
-        return response()->json($enrollment);
-    }
-
-    /**
-     * Remove the specified enrollment from storage.
-     */
-    public function destroy(string $id)
-    {
-        $enrollment = Enrollment::findOrFail($id);
-        $enrollment->delete();
-
-        return response()->json(['message' => 'Enrollment deleted successfully.']);
+            return response()->json(['message' => 'Enrollment berhasil dihapus.']);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Enrollment tidak ditemukan.'], 404);
+        }
     }
 }

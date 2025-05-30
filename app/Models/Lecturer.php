@@ -14,7 +14,7 @@ class Lecturer extends Model
         'name',
         'NIP',
         'department',
-        'email',
+        'email'
     ];
 
     protected function casts(): array
@@ -22,6 +22,8 @@ class Lecturer extends Model
         return [
             'NIP' => 'string',
             'email' => 'string',
+            'department' => 'string',
+            'name' => 'string',
         ];
     }
 

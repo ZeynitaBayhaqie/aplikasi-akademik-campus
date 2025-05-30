@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignUlid('student_id')->constrained('students')->cascadeOnDelete();
             $table->foreignUlid('course_id')->constrained('courses')->cascadeOnDelete();
             $table->string('grade');
-            $table->string('atttendance');
+            $table->string('attendance');
             $table->string('status');
             $table->timestamps();
         });
