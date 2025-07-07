@@ -16,15 +16,12 @@ class CourseLecturer extends Model
         'lecturer_id',
         'role'
     ];
-
-    protected function casts(): array
-    {
-        return [
-            'course_id' => 'string',
-            'lecturer_id' => 'string',
-            'role' => 'integer',
-        ];
-    }
+    protected $casts = [
+        'id' => 'string',
+        'course_id' => 'string',
+        'lecturer_id' => 'string',
+        'role' => 'integer',
+    ];
 
     public function course(): BelongsTo
     {

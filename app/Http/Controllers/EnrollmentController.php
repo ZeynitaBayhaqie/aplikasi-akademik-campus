@@ -34,7 +34,7 @@ class EnrollmentController extends Controller
             'student_id' => 'required|exists:students,id',
             'course_id' => 'required|exists:courses,id',
             'grade' => 'required|string|max:10',
-            'attendance' => 'required|string|max:255',
+            'attendance' => 'required|integer|min:0',
             'status' => 'required|string|max:255',
         ]);
 
@@ -58,12 +58,12 @@ class EnrollmentController extends Controller
                 'student_id' => 'sometimes|exists:students,id',
                 'course_id' => 'sometimes|exists:courses,id',
                 'grade' => 'sometimes|string|max:10',
-                'attendance' => 'sometimes|string|max:255',
+                'attendance' => 'sometimes|integer|min:0',
                 'status' => 'sometimes|string|max:255',
             ]);
 
             $enrollment->update($request->only([
-                'student_id', 'course_id', 'grade', 'atttendance', 'status'
+                'student_id', 'course_id', 'grade', 'attendance', 'status'
             ]));
 
             return response()->json([
