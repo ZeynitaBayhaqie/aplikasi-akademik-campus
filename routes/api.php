@@ -10,6 +10,7 @@ use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\CourseLecturerController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\DashboardController;
 
 
 Route::post('/login', [AuthController::class, 'login']);
@@ -30,6 +31,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('enrollment', EnrollmentController::class);
     Route::apiResource('lecturer', LecturerController::class);
     Route::apiResource('course_lecturers', CourseLecturerController::class);
+    Route::get('/dashboard/summary', [DashboardController::class, 'index']);
 
 });
 

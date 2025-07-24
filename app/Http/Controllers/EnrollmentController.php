@@ -33,9 +33,9 @@ class EnrollmentController extends Controller
         $request->validate([
             'student_id' => 'required|exists:students,id',
             'course_id' => 'required|exists:courses,id',
-            'grade' => 'required|string|max:10',
-            'attendance' => 'required|integer|min:0',
-            'status' => 'required|string|max:255',
+            'grade' => 'sometimes|string|max:10',
+            'attendance' => 'sometimes|integer|min:0',
+            'status' => 'sometimes|string|max:255',
         ]);
 
         $enrollment = Enrollment::create($request->only([
